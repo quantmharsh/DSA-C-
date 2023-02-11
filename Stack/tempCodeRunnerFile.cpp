@@ -1,0 +1,1 @@
+ cout<<"after deleting"<<endl;
