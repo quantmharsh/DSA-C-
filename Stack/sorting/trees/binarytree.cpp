@@ -108,7 +108,23 @@ void postorder(node*root)
     cout<<root->data<<" "<<endl;
 }
 
+ int height(node*root)
+{
 
+  if(root==NULL)
+  {
+    return 0;
+
+  }
+  int leftheight =height(root->left);
+  int rightheight=height(root->right);
+   int ans= max(leftheight,rightheight)+1;
+
+
+ return ans;
+  
+   
+}
 int main()
 {
     int i;
@@ -123,6 +139,8 @@ int main()
        cout<<"postorder"<<endl;
        postorder(root);
        cin>>i;
+       cout<<"height is"<<height(root);
+       
        return 0;
        
      
