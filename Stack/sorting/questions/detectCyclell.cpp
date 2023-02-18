@@ -91,6 +91,7 @@ bool detectCycle(node* &head )
         cout<<"FCD"<<slow->data<<endl;
           return slow;
     }
+   
     
         
     
@@ -110,7 +111,21 @@ bool detectCycle(node* &head )
         slow=slow->next;
     }
     cout<<"cycle at"<<slow->data<<endl;
+    return slow;
 
+  }
+  void removeCycle(node* & head)
+  {
+  node * start=getStartingNode(head);
+
+  node*temp=start;
+  while(temp->next!=start)
+  {
+    temp=temp->next;
+
+  }
+  temp->next=NULL;
+  cout<<"loop removed"<<endl;
   }
 
 int main()
@@ -146,6 +161,9 @@ int main()
         }
        
        getStartingNode(head);
+       removeCycle(head);
+       floyedcd(head);
+       
         
        
 }
